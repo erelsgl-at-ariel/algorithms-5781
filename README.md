@@ -21,7 +21,6 @@
 
 אחת משתי האפשרויות הללו תיבחר לפני תחילת הסמסטר.
 
-ההשתתפות בקורס מותנית בשמירה על
-[כללי יושר בהגשת מטלות](honesty-rules.md).
+יש לדווח בכתב על כל עזרה שקיבלתם בהגשת המטלה, בהתאם ל[תקנון היושר של המחלקה](https://www.ariel.ac.il/wp/cs/wp-content/uploads/sites/88/2020/08/Guidelines-for-Academic-Integrity.pdf).
 
 </div>
