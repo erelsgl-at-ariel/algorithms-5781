@@ -37,7 +37,8 @@ print("\nFinding rents for another matching {('salon', 'batya'), ('heder', 'aya'
 price_martef, price_heder, price_salon = cvxpy.Variable(), cvxpy.Variable(), cvxpy.Variable()
 prob = cvxpy.Problem(
     cvxpy.Minimize(0),
-    constraints = [price_martef + price_heder + price_salon == 100,
+    constraints = [
+            price_martef + price_heder + price_salon == -1000,
             40 - price_heder >= 35 - price_salon, 40 - price_heder >= 25 - price_martef,  # aya
             35 - price_salon >= 60 - price_heder, 35 - price_salon >= 40 - price_martef,  # batya
             20 - price_martef >= 40 - price_heder, 20 - price_martef >= 25 - price_salon,  # gila
