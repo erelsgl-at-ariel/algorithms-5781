@@ -1,7 +1,7 @@
 #!python3
 
 """
-Calculate the Shapley value in the airport problem.
+Calculate the Shapley values in the airport problem.
 
 Programmer: Erel Segal-Halevi
 Since: 2019-12
@@ -15,7 +15,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-import shapley_value
+import shapley
 
 
 def shapley_values_inefficient(map_player_to_cost:dict):
@@ -43,7 +43,7 @@ def shapley_values_inefficient(map_player_to_cost:dict):
 		if len(subset)>0
 	}
 	map_subset_to_cost[""] = 0
-	return shapley_value.shapley_values("".join(all_players), map_subset_to_cost)
+	return shapley.values(all_players, map_subset_to_cost)
 
 
 if __name__ == "__main__":

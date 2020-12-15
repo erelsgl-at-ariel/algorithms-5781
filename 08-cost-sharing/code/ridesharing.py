@@ -14,16 +14,19 @@ Programmer: Erel Segal-Halevi
 Since: 2019-12
 """
 
+import shapley
 
-import itertools, collections, powerset
+import powerset
 from dicttools import stringify  # Install dicttools from here: https://github.com/trzemecki/dicttools
 
 import logging
 logger = logging.getLogger(__name__)
 
+
+
 import networkx
 from networkx import DiGraph
-import shapley
+
 
 def path_cost(road_graph: DiGraph, path: list)->float:
 	"""
@@ -65,7 +68,7 @@ def sublist(the_list:list, the_set:set)->list:
 def shapley_values_inefficient(road_graph:DiGraph, path:list):
 	"""
 	Calculates the Shapley values for all players in an instance of the ride-sharing problem.
-	NOTE: values are calculated inefficiently, by creating an instance of the generic Shapley value problem.
+	NOTE: values are calculated inefficiently, by constructing an instance of the generic Shapley value problem.
 	This is done for demonstration purposes only.
 
 	:param road_graph:  a weighted directed graph, representing travel costs between destinations.
@@ -92,6 +95,7 @@ def shapley_values_inefficient(road_graph:DiGraph, path:list):
 	}
 	map_subset_to_cost[""] = 0
 	return shapley.values("".join(players), map_subset_to_cost)
+
 
 def shapley_values_efficient(road_graph:DiGraph, path:list):
 	"""
