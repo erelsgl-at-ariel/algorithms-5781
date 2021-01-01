@@ -12,8 +12,6 @@ from itertools import chain, combinations
 import cvxpy
 import functools
 
-
-
 # There are 4 projects, denoted by a, b, c, d.
 # The same letters denote the budget allocated to them.
 allocations = cvxpy.Variable(4)
@@ -39,7 +37,7 @@ utility_product = functools.reduce(lambda a,b: a*b, utility_values)
 print("PRODUCT: {}".format(utility_product))
 i=0
 print("Citizen {} should donate {} to a and {} to b".format(i,
-    a.value * donations[i] / utilities[i].value,
+    a.value *
     b.value * donations[i] / utilities[i].value
 ))
 i+=1
