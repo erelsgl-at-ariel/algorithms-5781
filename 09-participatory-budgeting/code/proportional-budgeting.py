@@ -35,17 +35,16 @@ def print_project_sets_by_descending_cost(map_project_to_cost:dict):
 def proportional_budgeting(map_project_to_cost:dict, votes:list, limit:int)->set:
     """
     Implementation of the Aziz-Lee-Talmon algorithm for proportional budgeting.
-
     >>> map_project_to_cost = {"a":20, "b":15, "c":15, "d":10}
-    >>> votes = ["ab","ab","ab","ab","c","c"]
+    >>> votes = ["ab", "ab", "ab", "ab", "c", "c"]
     >>> limit = 30
     >>> proportional_budgeting(map_project_to_cost, votes, limit)
     {'a'}
-
     """
     budgeted_projects = set()
     votes[:] = map(set, votes)   # convert every vote to a set
-    money_per_voter = limit / len(votes)
+    num_of_voters = len(votes)
+    money_per_voter = limit / num_of_voters
     logger.info("\nLimit={}. Voters={}. Money per voter={}".format(limit, len(votes),money_per_voter))
     for i in range(len(votes)):
         votes[i] = set(votes[i])

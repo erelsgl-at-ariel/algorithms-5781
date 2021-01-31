@@ -55,3 +55,8 @@ def sellHouse(buyers:list):
         print(max_profit_buyer.name+" gets the house and pays "+str(price))
     else:
         print("No buyer gets the house")
+
+
+
+if __name__=="__main__":
+    sellHouse ([Buyer(600,"a",40),Buyer(450,"b",40)])
